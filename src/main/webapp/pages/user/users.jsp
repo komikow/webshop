@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Просмотр всех пользователей</title>
 </head>
 <body>
 <table>
@@ -20,7 +20,6 @@
         <th>age</th>
         <th>login</th>
         <th>password</th>
-
     </tr>
     </thead>
     <tbody>

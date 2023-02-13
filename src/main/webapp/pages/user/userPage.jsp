@@ -12,6 +12,6 @@
     <title>Страница пользователя</title>
 </head>
 <body>
-<a href="../products/readProducts.jsp">Просмотреть все товары</a>
+<a href="../products/products.jsp">Просмотреть все товары</a>
 </body>
 </html>
