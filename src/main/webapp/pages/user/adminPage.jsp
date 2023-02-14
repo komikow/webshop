@@ -12,7 +12,7 @@
     <title>Страница администратора</title>
 </head>
 <body>
-<a href="../products/products.jsp">Просмотреть всех пользователей</a>
+<a href="../user/users.jsp">Просмотреть всех пользователей</a>
 <a href="../products/products.jsp">Просмотреть все товары</a>
 <a href="../products/addProducts.jsp">Добавить товар</a>
 </body>

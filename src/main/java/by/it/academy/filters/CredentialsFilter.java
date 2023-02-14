@@ -34,7 +34,7 @@ public class CredentialsFilter extends HttpFilter {
                     dbPassword = resultSet.getString(PASSWORD);
                 }
                 if (dbPassword.equals(passwordForm)) {
-                    req.getRequestDispatcher(PRODUCTS_PAGE)
+                    req.getRequestDispatcher(PRODUCT_URL_CREATE)
                             .forward(req, res);
                 } else {
                     req.getRequestDispatcher(ERRORS_AUTHORIZATION)

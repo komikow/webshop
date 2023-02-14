@@ -18,7 +18,7 @@ import java.util.List;
 
 import static by.it.academy.entities.Constants.PRODUCTS_PAGE;
 
-@WebServlet(urlPatterns = {"/user/*"})
+@WebServlet(urlPatterns = {"/product/create"}, loadOnStartup = 0)
 public class SelectProductController extends HttpServlet {
     List<Product> products = new ArrayList<>();
 
@@ -31,7 +31,8 @@ public class SelectProductController extends HttpServlet {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM DETECTORS");
             while (resultSet.next()) {
                 Product product = new Product();
-                product.setBrand(resultSet.getString(2));
+                product.setId((resultSet.getInt(1)));
+                product.setBrand((resultSet.getString(2)));
                 product.setModel(resultSet.getString(3));
                 product.setSpecifications(resultSet.getString(4));
                 product.setGuarantee(resultSet.getInt(5));

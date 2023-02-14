@@ -18,6 +18,7 @@ public class Constants {
     public static final String USERS_URL_READ = "/user/read";
     public static final String USERS_URL_CREATE = "/user/create";
     public static final String USERS_URL_INPUT = "/user/input";
+    public static final String PRODUCT_URL_CREATE = "/product/create";
     public static final String PATH_ALL = "/user/*";
     public static final String SEPARATOR = ":";
     public static final String PASSWORD = "password";
