@@ -1,5 +1,7 @@
 package by.it.academy.controllers;
 
+import by.it.academy.services.ConnectorDB;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +29,7 @@ public class CreateUserController extends HttpServlet {
         try {
             Class.forName(SQL_DRIVER_NAME);
             int id_credentials = 0;
-            connection = DriverManager.getConnection(SQL_URL, SQL_NAME, SQL_PASSWORD);
+            connection = ConnectorDB.getConnection();
             preparedStatement = connection.prepareStatement(INSERT_CREDENTIALS);
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, password);
