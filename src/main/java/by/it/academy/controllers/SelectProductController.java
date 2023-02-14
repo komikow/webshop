@@ -20,7 +20,7 @@ import static by.it.academy.entities.Constants.*;
 
 @WebServlet(urlPatterns = {PRODUCT_READ}, loadOnStartup = 0)
 public class SelectProductController extends HttpServlet {
-    List<Product> products = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
