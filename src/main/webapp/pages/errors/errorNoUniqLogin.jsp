@@ -11,6 +11,6 @@
     <title>Error</title>
 </head>
 <body>
-<p>This login already exists. Come up with a new login.</p>
+<p>Invalid login information. Check your login and password.</p>
 </body>
 </html>
