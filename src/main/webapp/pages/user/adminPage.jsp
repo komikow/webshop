@@ -12,8 +12,8 @@
     <title>Страница администратора</title>
 </head>
 <body>
-<a href="../products/products.jsp">Просмотреть всех пользователей</a>
-<a href="../products/products.jsp">Просмотреть все товары</a>
+<a href="/user_read">Просмотреть всех пользователей</a>
+<a href="/product_read">Просмотреть все товары</a>
 <a href="../products/addProducts.jsp">Добавить товар</a>
 </body>
 </html>

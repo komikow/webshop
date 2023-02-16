@@ -1,7 +1,10 @@
 package by.it.academy.controllers;
 
-import by.it.academy.services.ConnectorDB;
+import by.it.academy.services.DBConnector;
+import by.it.academy.services.UserService;
+import by.it.academy.services.UserServiceImpl;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,8 +15,10 @@ import java.sql.*;
 
 import static by.it.academy.entities.Constants.*;
 
+//@WebServlet(urlPatterns = {USERS_URL_CREATE}, loadOnStartup = 0)
 @WebServlet(urlPatterns = {USERS_URL_CREATE}, loadOnStartup = 0)
 public class CreateUserController extends HttpServlet {
+    private UserService userService;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,7 +34,7 @@ public class CreateUserController extends HttpServlet {
         try {
             Class.forName(SQL_DRIVER_NAME);
             int id_credentials = 0;
-            connection = ConnectorDB.getConnection();
+            connection = DBConnector.getConnection();
             preparedStatement = connection.prepareStatement(INSERT_CREDENTIALS);
             preparedStatement.setString(1, login);
             preparedStatement.setString(2, password);
@@ -37,7 +42,7 @@ public class CreateUserController extends HttpServlet {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(SELECT_CREDENTIALS);
             while (resultSet.next()) {
-                id_credentials = resultSet.getInt(NAME_ID_CREDENTIALS);
+                id_credentials = resultSet.getInt("id_credentials");
             }
             resultSet.close();
             statement.close();
@@ -53,5 +58,10 @@ public class CreateUserController extends HttpServlet {
             throw new RuntimeException(e);
         }
         req.getRequestDispatcher(PAGES_REGISTRATION_TRUE).forward(req, resp);
+    }
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        userService = (UserServiceImpl) config.getServletContext().getAttribute(SERVICES);
     }
 }

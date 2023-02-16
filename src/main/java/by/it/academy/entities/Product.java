@@ -12,7 +12,7 @@ public class Product {
     private String brand;
     private String model;
     private String specifications;
-    private int guarantee;
+    private int guaranteeInMonths;
     private int price;
     private int quantity;
 }

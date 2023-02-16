@@ -21,7 +21,7 @@
         <th>brand</th>
         <th>model</th>
         <th>specifications</th>
-        <th>guarantee</th>
+        <th>guaranteeInMonths</th>
         <th>price</th>
         <th>quantity</th>
     </tr>
@@ -33,7 +33,7 @@
             <td>${product.brand}</td>
             <td>${product.model}</td>
             <td>${product.specifications}</td>
-            <td>${product.guarantee}</td>
+            <td>${product.guaranteeInMonths}</td>
             <td>${product.price}</td>
             <td>${product.quantity}</td>
         </tr>
